@@ -20,11 +20,7 @@ class MiPagina {
         await this.pagina.waitForSelector('.flex.flex-row.flex-wrap')
         let iconos = (await this.pagina.$$('.flex.flex-row.flex-wrap'))[2]
         let link = (await iconos.$$('a'))
-        const txtLink = (await link.forEach(txtLink2 => console.log(await txtLink2.getProperty(href))))
-
-
-
-
+        const txtLink = (await link.forEach(txtLink2 => console.log((await txtLink2.getProperty('href')))))
     }
 
 }

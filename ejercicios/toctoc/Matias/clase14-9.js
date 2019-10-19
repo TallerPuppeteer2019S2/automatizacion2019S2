@@ -35,9 +35,12 @@
     await miPagina.waitForSelector('#linkReservePackagePackagesDetails')
     let precio = (await miPagina.$$('.text-right'))[0]
     let txtPrecio = (await precio.$$('span'))[1]
-    let spanPrecio = (await txtPrecio.evaluate(() => document.querySelector('span').innerText));
+   // let spanPrecio = (await precio.evaluate(() => document.querySelectorAll('span')[1].innerText));
     
-    //let spanPrecio = (await txtPrecio.getProperty('innerText'))
+    
+    
+    const spanPrecio = (await txtPrecio.getProperty('Text'))
+    
     console.log(spanPrecio)
     await miPagina.type(selector.fecha, '10/10/2019')
     await miPagina.click(selector.btnConsultar)
