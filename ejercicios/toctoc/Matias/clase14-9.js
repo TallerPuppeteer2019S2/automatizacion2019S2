@@ -39,7 +39,7 @@
     
     
     
-    const spanPrecio = (await txtPrecio.getProperty('Text'))
+    const spanPrecio = (await txtPrecio.getProperty('innerText'))
     
     console.log(spanPrecio)
     await miPagina.type(selector.fecha, '10/10/2019')
